@@ -1,5 +1,6 @@
 package com.example.lasalleapp.ui.commponents
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.material3.Card
@@ -12,17 +13,22 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.lasalleapp.R
+import com.example.lasalleapp.models.News
+import com.example.lasalleapp.ui.utils.newsList
 
 @Composable
-fun CardImage(Image: String) {
+fun CardImage(news: News, onClick: (News)->Unit) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
+            .clickable {
+                onClick(news)
+            }
     ) {
         AsyncImage(
             model = ImageRequest.Builder(LocalContext.current)
                 .placeholder(R.drawable.news_1)
-                .data(Image)
+                .data(news.image)
                 .build(),
             contentDescription = "CardImage",
             modifier = Modifier
@@ -36,5 +42,7 @@ fun CardImage(Image: String) {
 @Preview
 @Composable
 fun CardImagePreview() {
-    CardImage(Image = "https://www.lasallebajio.edu.mx/noticias/images/4719_1.jpg")
+    CardImage(news = newsList[0]){ news ->
+
+    }
 }
