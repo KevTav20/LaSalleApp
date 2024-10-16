@@ -40,28 +40,50 @@ import com.example.lasalleapp.ui.utils.Screens
 import com.example.lasalleapp.ui.utils.bottomNavBarItems
 import com.exyte.animatednavbar.AnimatedNavigationBar
 import com.exyte.animatednavbar.animation.indendshape.shapeCornerRadius
+import android.content.Context
+import androidx.navigation.NavController
+import com.example.lasalleapp.models.Student
+import com.example.lasalleapp.models.Subject
+import com.example.lasalleapp.ui.screens.LoginScreen
+import com.example.lasalleapp.ui.screens.SubjectScreen
+import com.example.lasalleapp.ui.utils.studentsList
+import androidx.compose.runtime.LaunchedEffect
 
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
         setContent {
             val navController = rememberNavController()
-            var selectedItemIndex by rememberSaveable {
-                mutableStateOf(0)
-            }
+            var selectedItemIndex by rememberSaveable { mutableStateOf(0) }
             val bottomNavRoutes = listOf(
                 Screens.Home.route,
                 Screens.Grades.route,
                 Screens.Settings.route,
                 Screens.Calendar.route
             )
+
+            val sharedPreferences = getSharedPreferences("myPrefs", MODE_PRIVATE)
+            val isLogged = sharedPreferences.getBoolean("isLogged", false)
+
             LaSalleAppTheme {
                 val currentRoute = navController.currentBackStackEntryAsState().value?.destination?.route
-                Scaffold(modifier = Modifier.fillMaxSize(),
+
+                // Mueve la lógica de navegación aquí
+                LaunchedEffect(isLogged) {
+                    if (isLogged) {
+                        navController.navigate("home") {
+                            popUpTo("login") { inclusive = true } // Esto asegura que no puedas volver al login
+                        }
+                    }
+                }
+
+                Scaffold(
+                    modifier = Modifier.fillMaxSize(),
                     bottomBar = {
-                        if (currentRoute in bottomNavRoutes){
+                        if (currentRoute in bottomNavRoutes) {
                             AnimatedNavigationBar(
                                 selectedIndex = selectedItemIndex,
                                 modifier = Modifier.height(90.dp),
@@ -83,18 +105,13 @@ class MainActivity : ComponentActivity() {
                                         Icon(
                                             imageVector = bottomNavigationItem.icon,
                                             contentDescription = bottomNavigationItem.title,
-                                            tint = if (selectedItemIndex == index) Color.White else Color.White.copy(
-                                                alpha = 0.5f
-                                            ),
-                                            modifier = Modifier
-                                                .size(26.dp)
+                                            tint = if (selectedItemIndex == index) Color.White else Color.White.copy(alpha = 0.5f),
+                                            modifier = Modifier.size(26.dp)
                                         )
                                         Text(
                                             text = bottomNavigationItem.title,
                                             style = MaterialTheme.typography.bodySmall,
-                                            color = if (selectedItemIndex == index) Color.White else Color.White.copy(
-                                                alpha = 0.5f
-                                            )
+                                            color = if (selectedItemIndex == index) Color.White else Color.White.copy(alpha = 0.5f)
                                         )
                                     }
                                 }
@@ -102,33 +119,51 @@ class MainActivity : ComponentActivity() {
                         }
                     }
                 ) { innerPadding ->
-                    NavHost(navController = navController, startDestination = Screens.Home.route) {
+                    NavHost(
+                        navController = navController,
+                        startDestination = if (isLogged) "home" else "login"
+                    ) {
+                        composable("login") {
+                            LoginScreen(navController, context = this@MainActivity)
+                        }
                         composable(route = Screens.Home.route) {
-                            HomeScreen(innerPadding = innerPadding, navController = navController)
+                            HomeScreen(innerPadding = innerPadding, navController = navController, context = this@MainActivity)
                         }
                         composable(route = Screens.Calendar.route) {
                             CalendarScreen(innerPadding = innerPadding)
                         }
                         composable(route = Screens.Grades.route) {
-                            GradesScreen(innerPadding = innerPadding)
+                            val studentEmail = sharedPreferences.getString("studentEmail", "")
+                            val student = studentsList.find { it.institutionalEmail == studentEmail }
+                            if (student != null) {
+                                GradesScreen(navController, innerPadding = innerPadding, student = student)
+                            }
                         }
                         composable(route = Screens.Settings.route) {
                             SettingsScreen(innerPadding = innerPadding)
                         }
-                        composable(route = Screens.NewsDetail.route + "/{id}",
-                            arguments = listOf(
-                                navArgument("id"){
-                                    type = NavType.IntType
-                                    nullable = false
-                                }
-                            )
-                            ) {
+                        composable(route = Screens.NewsDetail.route + "/{id}", arguments = listOf(navArgument("id") { type = NavType.IntType })) {
                             val id = it.arguments?.getInt("id", 0) ?: 0
                             NewsDetailScreen(newsId = id, innerPadding = innerPadding)
+                        }
+                        composable(
+                            route = Screens.Subject.route + "/{subjectId}",
+                            arguments = listOf(navArgument("subjectId") { type = NavType.IntType })
+                        ) { backStackEntry ->
+                            val subjectId = backStackEntry.arguments?.getInt("subjectId") ?: 0
+                            val studentEmail = sharedPreferences.getString("studentEmail", "")
+                            val student = studentsList.find { it.institutionalEmail == studentEmail }
+
+                            val subject = student?.subjects?.find { it.id == subjectId }
+
+                            if (subject != null) {
+                                SubjectScreen(subject = subject)
+                            }
                         }
                     }
                 }
             }
         }
+
     }
 }

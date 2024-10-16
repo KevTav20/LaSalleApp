@@ -1,5 +1,6 @@
 package com.example.lasalleapp.ui.screens
 
+import android.content.Context
 import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -55,8 +56,9 @@ import androidx.compose.ui.layout.ContentScale
 import coil.compose.AsyncImage
 
 @Composable
-fun HomeScreen(innerPadding: PaddingValues, navController: NavController) {
-    // Para hacer que todo sea scrolleable
+fun HomeScreen(innerPadding: PaddingValues, navController: NavController, context: Context ?= null) {
+    val sharedPreferences = context?.getSharedPreferences("myPrefs", Context.MODE_PRIVATE)
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -87,7 +89,6 @@ fun HomeScreen(innerPadding: PaddingValues, navController: NavController) {
                     .fillMaxSize()
                     .offset(y = 70.dp)
             )
-
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -100,8 +101,7 @@ fun HomeScreen(innerPadding: PaddingValues, navController: NavController) {
                     modifier = Modifier.size(70.dp)
                 )
                 Column(
-                    modifier = Modifier
-                        .weight(1f)
+                    modifier = Modifier.weight(1f)
                 ) {
                     Text(
                         text = stringResource(id = R.string.welcomeText),
@@ -113,8 +113,7 @@ fun HomeScreen(innerPadding: PaddingValues, navController: NavController) {
                         color = Color.White,
                         fontSize = 24.sp,
                         fontWeight = FontWeight.Bold,
-                        modifier = Modifier
-                            .padding(top = 15.dp)
+                        modifier = Modifier.padding(top = 15.dp)
                     )
                 }
                 Icon(
@@ -124,6 +123,16 @@ fun HomeScreen(innerPadding: PaddingValues, navController: NavController) {
                         .size(45.dp)
                         .clickable {
                             Log.i("HomeScreen", "Cerrando Sesion")
+
+                            if (sharedPreferences != null) {
+                                with(sharedPreferences.edit()) {
+                                    putBoolean("isLogged", false)
+                                    apply()
+                                }
+                            }
+                            navController.navigate("login") {
+                                popUpTo("home") { inclusive = true }
+                            }
                         },
                     tint = Color.White
                 )
@@ -147,7 +156,7 @@ fun HomeScreen(innerPadding: PaddingValues, navController: NavController) {
             ) {
                 Widget(icon = Icons.Default.DateRange, text = "Sin eventos")
                 Widget(icon = Task, text = "Tareas")
-                Widget(icon = Cash, stringResource(id = R.string.cash_text))
+                Widget(icon = Cash, text = "Pagos")
             }
         }
 
@@ -181,12 +190,12 @@ fun HomeScreen(innerPadding: PaddingValues, navController: NavController) {
                     style = MaterialTheme.typography.titleLarge
                 )
 
-                // Grid de comunidades
+
                 LazyVerticalGrid(
                     columns = GridCells.Fixed(2),
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(500.dp) // O usa un tamaño dinámico según sea necesario
+                        .height(500.dp)
                 ) {
                     items(communities) {
                         Box(
