@@ -54,10 +54,18 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.ui.layout.ContentScale
 import coil.compose.AsyncImage
+import com.example.lasalleapp.models.Student
+import com.example.lasalleapp.models.Subject
 
 @Composable
-fun HomeScreen(innerPadding: PaddingValues, navController: NavController, context: Context ?= null) {
+fun HomeScreen(
+    innerPadding: PaddingValues,
+    navController: NavController,
+    context: Context? = null,
+
+) {
     val sharedPreferences = context?.getSharedPreferences("myPrefs", Context.MODE_PRIVATE)
+    val fullName = sharedPreferences?.getString("studentFullName", "Estudiante") ?: "Estudiante"
 
     Column(
         modifier = Modifier
@@ -109,7 +117,7 @@ fun HomeScreen(innerPadding: PaddingValues, navController: NavController, contex
                         fontSize = 18.sp
                     )
                     Text(
-                        text = "Kevin Tavera",
+                        text = fullName,
                         color = Color.White,
                         fontSize = 24.sp,
                         fontWeight = FontWeight.Bold,
@@ -154,9 +162,18 @@ fun HomeScreen(innerPadding: PaddingValues, navController: NavController, contex
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceAround
             ) {
-                Widget(icon = Icons.Default.DateRange, text = "Sin eventos")
-                Widget(icon = Task, text = "Tareas")
-                Widget(icon = Cash, text = "Pagos")
+                Widget(
+                    icon = Icons.Default.DateRange,
+                    text = "Sin eventos",
+                    onClick = {
+                        navController.navigate("calendar")
+                    })
+                Widget(icon = Task,
+                    text = "Tareas",
+                    onClick = { navController.navigate("settings") })
+                Widget(icon = Cash,
+                    text = "Pagos",
+                    onClick = { navController.navigate("payments") })
             }
         }
 
@@ -189,7 +206,6 @@ fun HomeScreen(innerPadding: PaddingValues, navController: NavController, contex
                     modifier = Modifier.padding(top = 20.dp),
                     style = MaterialTheme.typography.titleLarge
                 )
-
 
                 LazyVerticalGrid(
                     columns = GridCells.Fixed(2),
@@ -227,6 +243,6 @@ fun HomeScreen(innerPadding: PaddingValues, navController: NavController, contex
 fun HomeScreenPreview() {
     val navController = rememberNavController()
     LaSalleAppTheme {
-        HomeScreen(innerPadding = PaddingValues(0.dp), navController)
+        HomeScreen(innerPadding = PaddingValues(0.dp), navController,)
     }
 }

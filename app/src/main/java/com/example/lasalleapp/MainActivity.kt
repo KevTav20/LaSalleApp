@@ -48,6 +48,7 @@ import com.example.lasalleapp.ui.screens.LoginScreen
 import com.example.lasalleapp.ui.screens.SubjectScreen
 import com.example.lasalleapp.ui.utils.studentsList
 import androidx.compose.runtime.LaunchedEffect
+import com.example.lasalleapp.ui.screens.PaymentsScreen
 
 
 class MainActivity : ComponentActivity() {
@@ -140,7 +141,10 @@ class MainActivity : ComponentActivity() {
                             }
                         }
                         composable(route = Screens.Settings.route) {
-                            SettingsScreen(innerPadding = innerPadding)
+                            SettingsScreen()
+                        }
+                        composable(route = Screens.Payments.route) {
+                            PaymentsScreen(innerPadding = innerPadding)
                         }
                         composable(route = Screens.NewsDetail.route + "/{id}", arguments = listOf(navArgument("id") { type = NavType.IntType })) {
                             val id = it.arguments?.getInt("id", 0) ?: 0

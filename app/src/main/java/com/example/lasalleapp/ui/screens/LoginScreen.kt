@@ -30,6 +30,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.example.lasalleapp.models.Student
+import com.example.lasalleapp.models.Subject
 import com.example.lasalleapp.ui.theme.LaSalleAppTheme
 import com.example.lasalleapp.ui.utils.studentsList
 
@@ -90,10 +92,10 @@ fun LoginScreen(navController: NavController, context: Context) {
                 }
 
                 if (validStudent != null) {
-                    // Guardar el ID del estudiante o correo en SharedPreferences
                     with(sharedPreferences.edit()) {
                         putBoolean("isLogged", true)
-                        putString("studentEmail", validStudent.institutionalEmail) // O bien usar validStudent.id
+                        putString("studentEmail", validStudent.institutionalEmail)
+                        putString("studentFullName", validStudent.fullName)
                         apply()
                     }
 
@@ -124,7 +126,7 @@ fun LoginScreenPreview() {
     val context = androidx.compose.ui.platform.LocalContext.current
 
     LaSalleAppTheme {
-        HomeScreen(innerPadding = PaddingValues(0.dp), navController, context)
+        HomeScreen(innerPadding = PaddingValues(0.dp), navController, context,)
     }
 }
 

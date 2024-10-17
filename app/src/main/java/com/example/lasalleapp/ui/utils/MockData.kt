@@ -1,6 +1,8 @@
 package com.example.lasalleapp.ui.utils
 
+import androidx.compose.foundation.Image
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Menu
@@ -8,6 +10,7 @@ import androidx.compose.material.icons.filled.Settings
 import com.example.lasalleapp.models.BottomNavigationItem
 import com.example.lasalleapp.models.Community
 import com.example.lasalleapp.models.News
+import com.example.lasalleapp.models.Settings
 import com.example.lasalleapp.models.Student
 import com.example.lasalleapp.models.Subject
 import java.time.LocalDate
@@ -105,7 +108,43 @@ val subjectList = listOf(
     Subject(id = 35, subjectName = "Software Architecture", partialGrades = listOf())
 )
 
-
+val settingsList = listOf(
+    Settings(
+        id = 1,
+        icon = Icons.Default.AccountCircle,
+        option = "Editar perfil"
+    ),
+    Settings(
+        id = 2,
+        icon = Icons.Default.AccountCircle,
+        option = "Soporte"
+    ),
+    Settings(
+        id = 3,
+        icon = Icons.Default.AccountCircle,
+        option = "Notificaciones"
+    ),
+    Settings(
+        id = 4,
+        icon = Icons.Default.AccountCircle,
+        option = "Cambiar tema"
+    ),
+    Settings(
+        id = 5,
+        icon = Icons.Default.AccountCircle,
+        option = "Idioma"
+    ),
+    Settings(
+        id = 6,
+        icon = Icons.Default.AccountCircle,
+        option = "Soporte"
+    ),
+    Settings(
+        id = 7,
+        icon = Icons.Default.AccountCircle,
+        option = "Cerrar Sesion"
+    ),
+)
 val studentsList = listOf(
     Student(
         id = 1,
@@ -113,7 +152,7 @@ val studentsList = listOf(
         dateOfBirth = "2001-01-10",
         institutionalEmail = "alice.johnson@university.edu",
         career = "ISSC",
-        imageUrl = "https://example.com/alice.jpg",
+        imageUrl = "https://imgur.com/Sf2phGy.jpg",
         password = "alice123",
         currentSemester = "1",
         subjects = listOf(
