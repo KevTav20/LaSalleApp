@@ -36,12 +36,13 @@ fun SettingsItem(icon: ImageVector, text: String, onClick: () -> Unit) {
         modifier = Modifier
             .width(220.dp)
             .height(50.dp)
-            .clip(RoundedCornerShape(20.dp))
+            .clip(RoundedCornerShape(30.dp))
             .background(MaterialTheme.colorScheme.primary)
     ) {
         Row(
             modifier = Modifier
-                .fillMaxWidth(),
+                .fillMaxWidth()
+                .padding(start = 10.dp),
             horizontalArrangement = Arrangement.Start,
             verticalAlignment = Alignment.CenterVertically
         ) {

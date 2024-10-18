@@ -10,7 +10,8 @@ data class Student(
     val password: String,
     val currentSemester: String,
     val subjects: List<Subject>,
-    val pastSemesters: List<Float> // Adding past semester averages
+    val pastSemesters: List<Float>,
+    val tution: List<Tuition>
 ) {
     // Current semester average
     val semesterAverage: Float

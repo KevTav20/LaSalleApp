@@ -14,6 +14,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.lasalleapp.models.Student
 import com.example.lasalleapp.ui.commponents.ScreenTemplate
 import com.example.lasalleapp.models.Subject
+import com.example.lasalleapp.models.Tuition
 import com.example.lasalleapp.ui.commponents.SubjectItem
 import com.example.lasalleapp.ui.theme.LaSalleAppTheme
 
@@ -57,19 +58,69 @@ fun PreviewGradesScreen() {
             dateOfBirth = "2001-01-10",
             institutionalEmail = "alice.johnson@university.edu",
             career = "ISSC",
-            imageUrl = "https://example.com/alice.jpg",
+            imageUrl = "https://imgur.com/8jnXixi.jpg",
             password = "alice123",
-            currentSemester = "2024-1",
+            currentSemester = "1",
             subjects = listOf(
                 Subject(id = 1, subjectName = "Math", partialGrades = listOf(8.0f, 9.0f, 7.5f)),
                 Subject(id = 2, subjectName = "Physics", partialGrades = listOf(7.0f, 8.5f, 9.0f)),
                 Subject(id = 3, subjectName = "Chemistry", partialGrades = listOf(9.5f, 8.5f, 10f)),
                 Subject(id = 4, subjectName = "Biology", partialGrades = listOf(7.5f, 8.0f, 7.0f)),
                 Subject(id = 5, subjectName = "History", partialGrades = listOf(8.0f, 9.5f, 9.0f)),
-                Subject(id = 6, subjectName = "Data Structures", partialGrades = listOf(7.5f, 8.0f, 8.5f)),
+                Subject(
+                    id = 6, subjectName = "Data Structures", partialGrades = listOf(7.5f, 8.0f, 8.5f)
+                ),
                 Subject(id = 7, subjectName = "Algorithms", partialGrades = listOf(9.0f, 9.5f, 8.5f))
             ),
-            pastSemesters = listOf(10f, 10f, 9.7f)
+            pastSemesters = listOf(0f),
+            tution = listOf(
+                // Primer grupo de 5 estudiantes (Periodo AGO-DIC 2024)
+                Tuition(
+                    1,
+                    "PRIMER PAGO DE COLEGIATURA",
+                    "agosto 16 de 2024",
+                    "57 - AGO-DIC 2024",
+                    15000,
+                    true,
+                    "CPAL00020769"
+                ),
+                Tuition(
+                    2,
+                    "SEGUNDO PAGO DE COLEGIATURA",
+                    "septiembre 16 de 2024",
+                    "57 - AGO-DIC 2024",
+                    15000,
+                    true,
+                    "CPAL00020770"
+                ),
+                Tuition(
+                    3,
+                    "TERCER PAGO DE COLEGIATURA",
+                    "octubre 16 de 2024",
+                    "57 - AGO-DIC 2024",
+                    15000,
+                    true,
+                    "CPAL00020771"
+                ),
+                Tuition(
+                    4,
+                    "CUARTO PAGO DE COLEGIATURA",
+                    "noviembre 16 de 2024",
+                    "57 - AGO-DIC 2024",
+                    15000,
+                    true,
+                    "CPAL00020772"
+                ),
+                Tuition(
+                    5,
+                    "QUINTO PAGO DE COLEGIATURA",
+                    "diciembre 16 de 2024",
+                    "57 - AGO-DIC 2024",
+                    15000,
+                    true,
+                    "CPAL00020773"
+                ),
+            )
         )
 
         // Llama a la función GradesScreen para la preview

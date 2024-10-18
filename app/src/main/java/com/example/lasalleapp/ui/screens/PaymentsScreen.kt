@@ -12,8 +12,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+import com.example.lasalleapp.ui.theme.LaSalleAppTheme
 import com.example.lasalleapp.ui.utils.Screens
 import com.example.lasalleapp.ui.utils.newsList
 
@@ -21,4 +23,15 @@ import com.example.lasalleapp.ui.utils.newsList
 fun PaymentsScreen(innerPadding: PaddingValues){
     Text(text = "Esto es Payments")
 
+}
+
+@Preview(
+    showSystemUi = true,
+    showBackground = true
+)
+@Composable
+fun PaymentsScreen(){
+    LaSalleAppTheme {
+        PaymentsScreen(innerPadding = PaddingValues())
+    }
 }

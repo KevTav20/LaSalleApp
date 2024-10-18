@@ -41,6 +41,7 @@ import com.example.lasalleapp.ui.utils.bottomNavBarItems
 import com.exyte.animatednavbar.AnimatedNavigationBar
 import com.exyte.animatednavbar.animation.indendshape.shapeCornerRadius
 import android.content.Context
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.navigation.NavController
 import com.example.lasalleapp.models.Student
 import com.example.lasalleapp.models.Subject
@@ -141,7 +142,12 @@ class MainActivity : ComponentActivity() {
                             }
                         }
                         composable(route = Screens.Settings.route) {
-                            SettingsScreen()
+                            val studentEmail = sharedPreferences.getString("studentEmail", "")
+                            val student = studentsList.find { it.institutionalEmail == studentEmail }
+                            if (student != null) {
+                                SettingsScreen(innerPadding = innerPadding, student = student)
+                            }
+
                         }
                         composable(route = Screens.Payments.route) {
                             PaymentsScreen(innerPadding = innerPadding)
