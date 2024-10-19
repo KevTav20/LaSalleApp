@@ -32,7 +32,7 @@ fun PaymentsScreen(innerPadding: PaddingValues, navController: NavController, st
         LazyColumn(
             modifier = Modifier.fillMaxSize(),
             contentPadding = PaddingValues(16.dp),
-            verticalArrangement = Arrangement.spacedBy(45.dp)
+            verticalArrangement = Arrangement.spacedBy(50.dp)
         ) {
             items(student.tution) { tuition ->
                 TutionItem(navController = navController, tuition)

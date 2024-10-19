@@ -184,7 +184,7 @@ class MainActivity : ComponentActivity() {
                             val subject = student?.subjects?.find { it.id == subjectId }
 
                             if (subject != null) {
-                                SubjectScreen(subject = subject)
+                                SubjectScreen(subject = subject, innerPadding)
                             }
                         }
                     }

@@ -122,7 +122,7 @@ val studentsList = listOf(
     Student(
         id = 1,
         fullName = "Alice Johnson",
-        dateOfBirth = "2001-01-10",
+        dateOfBirth = "10 de Enero de 2001",
         institutionalEmail = "alice.johnson@university.edu",
         career = "ISSC",
         imageUrl = "https://imgur.com/8jnXixi.jpg",
@@ -191,7 +191,7 @@ val studentsList = listOf(
     ), Student(
         id = 2,
         fullName = "Bob Smith",
-        dateOfBirth = "2000-03-22",
+        dateOfBirth = "22 de Marzo de 2000",
         institutionalEmail = "bob.smith@university.edu",
         career = "ISSC",
         imageUrl = "https://imgur.com/M96Bm53.jpg",
@@ -271,7 +271,7 @@ val studentsList = listOf(
     ), Student(
         id = 3,
         fullName = "Charlie Brown",
-        dateOfBirth = "1999-05-18",
+        dateOfBirth = "18 de Mayo de 1999",
         institutionalEmail = "charlie.brown@university.edu",
         career = "ISSC",
         imageUrl = "https://imgur.com/DenWeik.jpg",
@@ -347,7 +347,7 @@ val studentsList = listOf(
     ), Student(
         id = 4,
         fullName = "Diana Prince",
-        dateOfBirth = "2002-07-09",
+        dateOfBirth = "09 de Julio de 2002",
         institutionalEmail = "diana.prince@university.edu",
         career = "ISSC",
         imageUrl = "https://imgur.com/uC8PARb.jpg",
@@ -425,7 +425,7 @@ val studentsList = listOf(
     ), Student(
         id = 5,
         fullName = "Eve Adams",
-        dateOfBirth = "2001-09-25",
+        dateOfBirth = "25 de Octubre del 2001",
         institutionalEmail = "eve.adams@university.edu",
         career = "ISSC",
         imageUrl = "https://imgur.com/d138C8t.jpg",
