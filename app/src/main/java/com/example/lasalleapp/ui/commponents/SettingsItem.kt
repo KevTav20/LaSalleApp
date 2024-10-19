@@ -38,6 +38,7 @@ fun SettingsItem(icon: ImageVector, text: String, onClick: () -> Unit) {
             .height(50.dp)
             .clip(RoundedCornerShape(30.dp))
             .background(MaterialTheme.colorScheme.primary)
+            .clickable(onClick = onClick)
     ) {
         Row(
             modifier = Modifier
@@ -63,6 +64,7 @@ fun SettingsItem(icon: ImageVector, text: String, onClick: () -> Unit) {
         }
     }
 }
+
 
 @Preview
 @Composable

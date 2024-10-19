@@ -49,9 +49,12 @@ import com.example.lasalleapp.ui.screens.LoginScreen
 import com.example.lasalleapp.ui.screens.SubjectScreen
 import com.example.lasalleapp.ui.utils.studentsList
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.remember
 import com.example.lasalleapp.ui.screens.BanBajioScreen
+import com.example.lasalleapp.ui.screens.PasswordScreen
 import com.example.lasalleapp.ui.screens.PaymentsScreen
 import com.example.lasalleapp.ui.screens.ReceptionScreen
+import com.example.lasalleapp.ui.screens.ThemeScreen
 
 
 class MainActivity : ComponentActivity() {
@@ -60,6 +63,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
 
         setContent {
+            var isDarkTheme by remember { mutableStateOf(false) }
             val navController = rememberNavController()
             var selectedItemIndex by rememberSaveable { mutableStateOf(0) }
             val bottomNavRoutes = listOf(
@@ -147,11 +151,17 @@ class MainActivity : ComponentActivity() {
                             val studentEmail = sharedPreferences.getString("studentEmail", "")
                             val student = studentsList.find { it.institutionalEmail == studentEmail }
                             if (student != null) {
-                                SettingsScreen(innerPadding = innerPadding, student = student)
+                                SettingsScreen(innerPadding = innerPadding, student = student, navController)
                             }
                         }
                         composable(route = Screens.Reception.route) {
                             ReceptionScreen(innerPadding = innerPadding)
+                        }
+                        composable(route = Screens.Password.route) {
+                            PasswordScreen(innerPadding = innerPadding)
+                        }
+                        composable(route = Screens.Theme.route) {
+                            ThemeScreen(innerPadding = innerPadding)
                         }
                         composable(route = Screens.BanBajio.route) {
                             BanBajioScreen(innerPadding = innerPadding)

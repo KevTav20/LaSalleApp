@@ -33,9 +33,11 @@ import com.example.lasalleapp.ui.theme.LaSalleAppTheme
 import com.example.lasalleapp.ui.utils.Screens
 import com.example.lasalleapp.ui.utils.newsList
 import com.example.lasalleapp.ui.utils.settingsList
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun SettingsScreen(innerPadding: PaddingValues, student: Student) {
+fun SettingsScreen(innerPadding: PaddingValues, student: Student, navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -53,12 +55,37 @@ fun SettingsScreen(innerPadding: PaddingValues, student: Student) {
             ) {
                 items(settingsList) { settings ->
                     SettingsItem(settings.icon, settings.option) {
+                        when (settings.option) {
+                            "Editar perfil" -> {
+                                navController.navigate(Screens.Home.route)
+                            }
+                            "Cambiar contraseña" -> { // Fixed case sensitivity
+                                navController.navigate(Screens.Password.route)
+                            }
+                            "Notificaciones" -> {
+                                navController.navigate(Screens.Home.route)
+                            }
+                            "Cambiar tema" -> {
+                                navController.navigate(Screens.Theme.route)
+                            }
+                            "Idioma" -> {
+                                navController.navigate(Screens.Home.route)
+                            }
+                            "Soporte" -> {
+                                navController.navigate(Screens.Home.route)
+                            }
+                            "Cerrar Sesion" -> {
+                                navController.navigate(Screens.Login.route)
+                            }
+                        }
                     }
                 }
             }
         }
     }
 }
+
+
 
 @Preview(
     showBackground = true,
@@ -81,62 +108,19 @@ fun SettingsScreenPreview() {
             Subject(id = 3, subjectName = "Chemistry", partialGrades = listOf(9.5f, 8.5f, 10f)),
             Subject(id = 4, subjectName = "Biology", partialGrades = listOf(7.5f, 8.0f, 7.0f)),
             Subject(id = 5, subjectName = "History", partialGrades = listOf(8.0f, 9.5f, 9.0f)),
-            Subject(
-                id = 6, subjectName = "Data Structures", partialGrades = listOf(7.5f, 8.0f, 8.5f)
-            ),
+            Subject(id = 6, subjectName = "Data Structures", partialGrades = listOf(7.5f, 8.0f, 8.5f)),
             Subject(id = 7, subjectName = "Algorithms", partialGrades = listOf(9.0f, 9.5f, 8.5f))
         ),
         pastSemesters = listOf(0f),
         tution = listOf(
-            // Primer grupo de 5 estudiantes (Periodo AGO-DIC 2024)
-            Tuition(
-                1,
-                "PRIMER PAGO DE COLEGIATURA",
-                "agosto 16 de 2024",
-                "57 - AGO-DIC 2024",
-                15000,
-                true,
-                "CPAL00020769"
-            ),
-            Tuition(
-                2,
-                "SEGUNDO PAGO DE COLEGIATURA",
-                "septiembre 16 de 2024",
-                "57 - AGO-DIC 2024",
-                15000,
-                true,
-                "CPAL00020770"
-            ),
-            Tuition(
-                3,
-                "TERCER PAGO DE COLEGIATURA",
-                "octubre 16 de 2024",
-                "57 - AGO-DIC 2024",
-                15000,
-                true,
-                "CPAL00020771"
-            ),
-            Tuition(
-                4,
-                "CUARTO PAGO DE COLEGIATURA",
-                "noviembre 16 de 2024",
-                "57 - AGO-DIC 2024",
-                15000,
-                true,
-                "CPAL00020772"
-            ),
-            Tuition(
-                5,
-                "QUINTO PAGO DE COLEGIATURA",
-                "diciembre 16 de 2024",
-                "57 - AGO-DIC 2024",
-                15000,
-                true,
-                "CPAL00020773"
-            ),
+            Tuition(1, "PRIMER PAGO DE COLEGIATURA", "agosto 16 de 2024", "57 - AGO-DIC 2024", 15000, true, "CPAL00020769"),
+            Tuition(2, "SEGUNDO PAGO DE COLEGIATURA", "septiembre 16 de 2024", "57 - AGO-DIC 2024", 15000, true, "CPAL00020770")
         )
     )
+    // Crea un NavController ficticio para la previsualización
+    val navController = rememberNavController()
+
     LaSalleAppTheme {
-        SettingsScreen(innerPadding = PaddingValues(), student = student)
+        SettingsScreen(innerPadding = PaddingValues(), student = student, navController = navController)
     }
 }
