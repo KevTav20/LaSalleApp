@@ -49,7 +49,9 @@ import com.example.lasalleapp.ui.screens.LoginScreen
 import com.example.lasalleapp.ui.screens.SubjectScreen
 import com.example.lasalleapp.ui.utils.studentsList
 import androidx.compose.runtime.LaunchedEffect
+import com.example.lasalleapp.ui.screens.BanBajioScreen
 import com.example.lasalleapp.ui.screens.PaymentsScreen
+import com.example.lasalleapp.ui.screens.ReceptionScreen
 
 
 class MainActivity : ComponentActivity() {
@@ -147,11 +149,26 @@ class MainActivity : ComponentActivity() {
                             if (student != null) {
                                 SettingsScreen(innerPadding = innerPadding, student = student)
                             }
-
+                        }
+                        composable(route = Screens.Reception.route) {
+                            ReceptionScreen(innerPadding = innerPadding)
+                        }
+                        composable(route = Screens.BanBajio.route) {
+                            BanBajioScreen(innerPadding = innerPadding)
                         }
                         composable(route = Screens.Payments.route) {
-                            PaymentsScreen(innerPadding = innerPadding)
+                            // Obtener el correo del estudiante desde SharedPreferences
+                            val studentEmail = sharedPreferences.getString("studentEmail", "")
+
+                            // Buscar el estudiante por su correo en la lista de estudiantes
+                            val student = studentsList.find { it.institutionalEmail == studentEmail }
+
+                            if (student != null) {
+                                // Si se encuentra el estudiante, mostrar la pantalla de pagos
+                                PaymentsScreen(innerPadding = innerPadding, navController = navController, student = student)
+                            }
                         }
+
                         composable(route = Screens.NewsDetail.route + "/{id}", arguments = listOf(navArgument("id") { type = NavType.IntType })) {
                             val id = it.arguments?.getInt("id", 0) ?: 0
                             NewsDetailScreen(newsId = id, innerPadding = innerPadding)

@@ -144,7 +144,7 @@ val studentsList = listOf(
             // Primer grupo de 5 estudiantes (Periodo AGO-DIC 2024)
             Tuition(
                 1,
-                "PRIMER PAGO DE COLEGIATURA",
+                "PRIMER PAGO",
                 "agosto 16 de 2024",
                 "57 - AGO-DIC 2024",
                 15000,
@@ -153,20 +153,20 @@ val studentsList = listOf(
             ),
             Tuition(
                 2,
-                "SEGUNDO PAGO DE COLEGIATURA",
+                "SEGUNDO PAGO",
                 "septiembre 16 de 2024",
                 "57 - AGO-DIC 2024",
                 15000,
-                true,
+                false,
                 "CPAL00020770"
             ),
             Tuition(
                 3,
-                "TERCER PAGO DE COLEGIATURA",
+                "TERCER PAGO",
                 "octubre 16 de 2024",
                 "57 - AGO-DIC 2024",
                 15000,
-                true,
+                false,
                 "CPAL00020771"
             ),
             Tuition(
@@ -224,16 +224,16 @@ val studentsList = listOf(
         tution = listOf(
             Tuition(
                 6,
-                "PRIMER PAGO DE COLEGIATURA",
+                "PRIMER PAGO",
                 "enero 16 de 2025",
                 "58 - ENE-JUN 2025",
                 15000,
-                true,
+                false,
                 "CPAL00020774"
             ),
             Tuition(
                 7,
-                "SEGUNDO PAGO DE COLEGIATURA",
+                "SEGUNDO PAGO",
                 "febrero 16 de 2025",
                 "58 - ENE-JUN 2025",
                 15000,
@@ -242,16 +242,16 @@ val studentsList = listOf(
             ),
             Tuition(
                 8,
-                "TERCER PAGO DE COLEGIATURA",
+                "TERCER PAGO",
                 "marzo 16 de 2025",
                 "58 - ENE-JUN 2025",
                 15000,
-                true,
+                false,
                 "CPAL00020776"
             ),
             Tuition(
                 9,
-                "CUARTO PAGO DE COLEGIATURA",
+                "CUARTO PAGO",
                 "abril 16 de 2025",
                 "58 - ENE-JUN 2025",
                 15000,
@@ -260,7 +260,7 @@ val studentsList = listOf(
             ),
             Tuition(
                 10,
-                "QUINTO PAGO DE COLEGIATURA",
+                "QUINTO PAGO",
                 "mayo 16 de 2025",
                 "58 - ENE-JUN 2025",
                 15000,
@@ -300,7 +300,7 @@ val studentsList = listOf(
         tution = listOf(
             Tuition(
                 11,
-                "PRIMER PAGO DE COLEGIATURA",
+                "PRIMER PAGO",
                 "agosto 16 de 2025",
                 "59 - AGO-DIC 2025",
                 15000,
@@ -309,16 +309,16 @@ val studentsList = listOf(
             ),
             Tuition(
                 12,
-                "SEGUNDO PAGO DE COLEGIATURA",
+                "SEGUNDO PAGO",
                 "septiembre 16 de 2025",
                 "59 - AGO-DIC 2025",
                 15000,
-                true,
+                false,
                 "CPAL00020780"
             ),
             Tuition(
                 13,
-                "TERCER PAGO DE COLEGIATURA",
+                "TERCER PAGO",
                 "octubre 16 de 2025",
                 "59 - AGO-DIC 2025",
                 15000,
@@ -327,7 +327,7 @@ val studentsList = listOf(
             ),
             Tuition(
                 14,
-                "CUARTO PAGO DE COLEGIATURA",
+                "CUARTO PAGO",
                 "noviembre 16 de 2025",
                 "59 - AGO-DIC 2025",
                 15000,
@@ -336,11 +336,11 @@ val studentsList = listOf(
             ),
             Tuition(
                 15,
-                "QUINTO PAGO DE COLEGIATURA",
+                "QUINTO PAGO",
                 "diciembre 16 de 2025",
                 "59 - AGO-DIC 2025",
                 15000,
-                true,
+                false,
                 "CPAL00020783"
             ),
         )
@@ -378,7 +378,7 @@ val studentsList = listOf(
         tution = listOf(
             Tuition(
                 16,
-                "PRIMER PAGO DE COLEGIATURA",
+                "PRIMER PAGO",
                 "enero 16 de 2026",
                 "60 - ENE-JUN 2026",
                 15000,
@@ -387,7 +387,7 @@ val studentsList = listOf(
             ),
             Tuition(
                 17,
-                "SEGUNDO PAGO DE COLEGIATURA",
+                "SEGUNDO PAGO",
                 "febrero 16 de 2026",
                 "60 - ENE-JUN 2026",
                 15000,
@@ -396,7 +396,7 @@ val studentsList = listOf(
             ),
             Tuition(
                 18,
-                "TERCER PAGO DE COLEGIATURA",
+                "TERCER PAGO",
                 "marzo 16 de 2026",
                 "60 - ENE-JUN 2026",
                 15000,
@@ -405,20 +405,20 @@ val studentsList = listOf(
             ),
             Tuition(
                 19,
-                "CUARTO PAGO DE COLEGIATURA",
+                "CUARTO PAGO",
                 "abril 16 de 2026",
                 "60 - ENE-JUN 2026",
                 15000,
-                true,
+                false,
                 "CPAL00020787"
             ),
             Tuition(
                 20,
-                "QUINTO PAGO DE COLEGIATURA",
+                "QUINTO PAGO",
                 "mayo 16 de 2026",
                 "60 - ENE-JUN 2026",
                 15000,
-                true,
+                false,
                 "CPAL00020788"
             ),
         )
@@ -464,16 +464,16 @@ val studentsList = listOf(
             // Quinto grupo de 5 estudiantes (Periodo AGO-DIC 2026)
             Tuition(
                 21,
-                "PRIMER PAGO DE COLEGIATURA",
+                "PRIMER PAGO",
                 "agosto 16 de 2026",
                 "61 - AGO-DIC 2026",
                 15000,
-                true,
+                false,
                 "CPAL00020789"
             ),
             Tuition(
                 22,
-                "SEGUNDO PAGO DE COLEGIATURA",
+                "SEGUNDO PAGO",
                 "septiembre 16 de 2026",
                 "61 - AGO-DIC 2026",
                 15000,
@@ -482,7 +482,7 @@ val studentsList = listOf(
             ),
             Tuition(
                 23,
-                "TERCER PAGO DE COLEGIATURA",
+                "TERCER PAGO",
                 "octubre 16 de 2026",
                 "61 - AGO-DIC 2026",
                 15000,
@@ -491,20 +491,20 @@ val studentsList = listOf(
             ),
             Tuition(
                 24,
-                "CUARTO PAGO DE COLEGIATURA",
+                "CUARTO PAGO",
                 "noviembre 16 de 2026",
                 "61 - AGO-DIC 2026",
                 15000,
-                true,
+                false,
                 "CPAL00020792"
             ),
             Tuition(
                 25,
-                "QUINTO PAGO DE COLEGIATURA",
+                "QUINTO PAGO",
                 "diciembre 16 de 2026",
                 "61 - AGO-DIC 2026",
                 15000,
-                true,
+                false,
                 "CPAL00020793"
             ),
         )
@@ -515,7 +515,7 @@ val tuitionList = listOf(
     // Primer grupo de 5 estudiantes (Periodo AGO-DIC 2024)
     Tuition(
         1,
-        "PRIMER PAGO DE COLEGIATURA",
+        "PRIMER PAGO",
         "agosto 16 de 2024",
         "57 - AGO-DIC 2024",
         15000,
@@ -523,7 +523,7 @@ val tuitionList = listOf(
         "CPAL00020769"
     ), Tuition(
         2,
-        "SEGUNDO PAGO DE COLEGIATURA",
+        "SEGUNDO PAGO",
         "septiembre 16 de 2024",
         "57 - AGO-DIC 2024",
         15000,
@@ -531,7 +531,7 @@ val tuitionList = listOf(
         "CPAL00020770"
     ), Tuition(
         3,
-        "TERCER PAGO DE COLEGIATURA",
+        "TERCER PAGO",
         "octubre 16 de 2024",
         "57 - AGO-DIC 2024",
         15000,
@@ -539,7 +539,7 @@ val tuitionList = listOf(
         "CPAL00020771"
     ), Tuition(
         4,
-        "CUARTO PAGO DE COLEGIATURA",
+        "CUARTO PAGO",
         "noviembre 16 de 2024",
         "57 - AGO-DIC 2024",
         15000,
@@ -547,7 +547,7 @@ val tuitionList = listOf(
         "CPAL00020772"
     ), Tuition(
         5,
-        "QUINTO PAGO DE COLEGIATURA",
+        "QUINTO PAGO",
         "diciembre 16 de 2024",
         "57 - AGO-DIC 2024",
         15000,
@@ -558,7 +558,7 @@ val tuitionList = listOf(
     // Segundo grupo de 5 estudiantes (Periodo ENE-JUN 2025)
     Tuition(
         6,
-        "PRIMER PAGO DE COLEGIATURA",
+        "PRIMER PAGO",
         "enero 16 de 2025",
         "58 - ENE-JUN 2025",
         15000,
@@ -566,7 +566,7 @@ val tuitionList = listOf(
         "CPAL00020774"
     ), Tuition(
         7,
-        "SEGUNDO PAGO DE COLEGIATURA",
+        "SEGUNDO PAGO",
         "febrero 16 de 2025",
         "58 - ENE-JUN 2025",
         15000,
@@ -574,7 +574,7 @@ val tuitionList = listOf(
         "CPAL00020775"
     ), Tuition(
         8,
-        "TERCER PAGO DE COLEGIATURA",
+        "TERCER PAGO",
         "marzo 16 de 2025",
         "58 - ENE-JUN 2025",
         15000,
@@ -582,7 +582,7 @@ val tuitionList = listOf(
         "CPAL00020776"
     ), Tuition(
         9,
-        "CUARTO PAGO DE COLEGIATURA",
+        "CUARTO PAGO",
         "abril 16 de 2025",
         "58 - ENE-JUN 2025",
         15000,
@@ -590,7 +590,7 @@ val tuitionList = listOf(
         "CPAL00020777"
     ), Tuition(
         10,
-        "QUINTO PAGO DE COLEGIATURA",
+        "QUINTO PAGO",
         "mayo 16 de 2025",
         "58 - ENE-JUN 2025",
         15000,
@@ -601,7 +601,7 @@ val tuitionList = listOf(
     // Tercer grupo de 5 estudiantes (Periodo AGO-DIC 2025)
     Tuition(
         11,
-        "PRIMER PAGO DE COLEGIATURA",
+        "PRIMER PAGO",
         "agosto 16 de 2025",
         "59 - AGO-DIC 2025",
         15000,
@@ -609,7 +609,7 @@ val tuitionList = listOf(
         "CPAL00020779"
     ), Tuition(
         12,
-        "SEGUNDO PAGO DE COLEGIATURA",
+        "SEGUNDO PAGO",
         "septiembre 16 de 2025",
         "59 - AGO-DIC 2025",
         15000,
@@ -617,7 +617,7 @@ val tuitionList = listOf(
         "CPAL00020780"
     ), Tuition(
         13,
-        "TERCER PAGO DE COLEGIATURA",
+        "TERCER PAGO",
         "octubre 16 de 2025",
         "59 - AGO-DIC 2025",
         15000,
@@ -625,7 +625,7 @@ val tuitionList = listOf(
         "CPAL00020781"
     ), Tuition(
         14,
-        "CUARTO PAGO DE COLEGIATURA",
+        "CUARTO PAGO",
         "noviembre 16 de 2025",
         "59 - AGO-DIC 2025",
         15000,
@@ -633,7 +633,7 @@ val tuitionList = listOf(
         "CPAL00020782"
     ), Tuition(
         15,
-        "QUINTO PAGO DE COLEGIATURA",
+        "QUINTO PAGO",
         "diciembre 16 de 2025",
         "59 - AGO-DIC 2025",
         15000,
@@ -644,7 +644,7 @@ val tuitionList = listOf(
     // Cuarto grupo de 5 estudiantes (Periodo ENE-JUN 2026)
     Tuition(
         16,
-        "PRIMER PAGO DE COLEGIATURA",
+        "PRIMER PAGO",
         "enero 16 de 2026",
         "60 - ENE-JUN 2026",
         15000,
@@ -652,7 +652,7 @@ val tuitionList = listOf(
         "CPAL00020784"
     ), Tuition(
         17,
-        "SEGUNDO PAGO DE COLEGIATURA",
+        "SEGUNDO PAGO",
         "febrero 16 de 2026",
         "60 - ENE-JUN 2026",
         15000,
@@ -660,7 +660,7 @@ val tuitionList = listOf(
         "CPAL00020785"
     ), Tuition(
         18,
-        "TERCER PAGO DE COLEGIATURA",
+        "TERCER PAGO",
         "marzo 16 de 2026",
         "60 - ENE-JUN 2026",
         15000,
@@ -668,7 +668,7 @@ val tuitionList = listOf(
         "CPAL00020786"
     ), Tuition(
         19,
-        "CUARTO PAGO DE COLEGIATURA",
+        "CUARTO PAGO",
         "abril 16 de 2026",
         "60 - ENE-JUN 2026",
         15000,
@@ -676,7 +676,7 @@ val tuitionList = listOf(
         "CPAL00020787"
     ), Tuition(
         20,
-        "QUINTO PAGO DE COLEGIATURA",
+        "QUINTO PAGO",
         "mayo 16 de 2026",
         "60 - ENE-JUN 2026",
         15000,
@@ -687,7 +687,7 @@ val tuitionList = listOf(
     // Quinto grupo de 5 estudiantes (Periodo AGO-DIC 2026)
     Tuition(
         21,
-        "PRIMER PAGO DE COLEGIATURA",
+        "PRIMER PAGO",
         "agosto 16 de 2026",
         "61 - AGO-DIC 2026",
         15000,
@@ -695,7 +695,7 @@ val tuitionList = listOf(
         "CPAL00020789"
     ), Tuition(
         22,
-        "SEGUNDO PAGO DE COLEGIATURA",
+        "SEGUNDO PAGO",
         "septiembre 16 de 2026",
         "61 - AGO-DIC 2026",
         15000,
@@ -703,7 +703,7 @@ val tuitionList = listOf(
         "CPAL00020790"
     ), Tuition(
         23,
-        "TERCER PAGO DE COLEGIATURA",
+        "TERCER PAGO",
         "octubre 16 de 2026",
         "61 - AGO-DIC 2026",
         15000,
@@ -711,7 +711,7 @@ val tuitionList = listOf(
         "CPAL00020791"
     ), Tuition(
         24,
-        "CUARTO PAGO DE COLEGIATURA",
+        "CUARTO PAGO",
         "noviembre 16 de 2026",
         "61 - AGO-DIC 2026",
         15000,
@@ -719,7 +719,7 @@ val tuitionList = listOf(
         "CPAL00020792"
     ), Tuition(
         25,
-        "QUINTO PAGO DE COLEGIATURA",
+        "QUINTO PAGO",
         "diciembre 16 de 2026",
         "61 - AGO-DIC 2026",
         15000,
@@ -730,7 +730,7 @@ val tuitionList = listOf(
     // Sexto grupo de 5 estudiantes (Periodo ENE-JUN 2027)
     Tuition(
         26,
-        "PRIMER PAGO DE COLEGIATURA",
+        "PRIMER PAGO",
         "enero 16 de 2027",
         "62 - ENE-JUN 2027",
         15000,
@@ -738,7 +738,7 @@ val tuitionList = listOf(
         "CPAL00020794"
     ), Tuition(
         27,
-        "SEGUNDO PAGO DE COLEGIATURA",
+        "SEGUNDO PAGO",
         "febrero 16 de 2027",
         "62 - ENE-JUN 2027",
         15000,
@@ -746,7 +746,7 @@ val tuitionList = listOf(
         "CPAL00020795"
     ), Tuition(
         28,
-        "TERCER PAGO DE COLEGIATURA",
+        "TERCER PAGO",
         "marzo 16 de 2027",
         "62 - ENE-JUN 2027",
         15000,
@@ -754,7 +754,7 @@ val tuitionList = listOf(
         "CPAL00020796"
     ), Tuition(
         29,
-        "CUARTO PAGO DE COLEGIATURA",
+        "CUARTO PAGO",
         "abril 16 de 2027",
         "62 - ENE-JUN 2027",
         15000,
@@ -762,7 +762,7 @@ val tuitionList = listOf(
         "CPAL00020797"
     ), Tuition(
         30,
-        "QUINTO PAGO DE COLEGIATURA",
+        "QUINTO PAGO",
         "mayo 16 de 2027",
         "62 - ENE-JUN 2027",
         15000,

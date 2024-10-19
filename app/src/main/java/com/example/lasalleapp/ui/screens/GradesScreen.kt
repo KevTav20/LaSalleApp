@@ -31,10 +31,8 @@ fun GradesScreen(navController: NavController, innerPadding: PaddingValues, stud
                 Text(text = "Current Semester: ${student.currentSemester}", style = MaterialTheme.typography.bodyMedium)
                 Spacer(modifier = Modifier.height(16.dp))
 
-                // Display each subject using SubjectItem
                 student.subjects.forEach { subject ->
                     SubjectItem(subject = subject) {
-                        // Pass the subjectId when navigating
                         navController.navigate("subject/${subject.id}")
                     }
                 }
